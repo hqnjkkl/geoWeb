@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCBl9iBM91pQJlOfbBKMpKVsFUvFfyBNrA&sensor=false">
+    </script>
+    <script type="text/javascript">
+    //var myCenter =  new google.maps.LatLng(52.395715,4.888916);
+var oahu=new google.maps.LatLng(21.43333,-157.96666);
+var waiki=new google.maps.LatLng(21.27861,-157.82833);
+var pearl=new google.maps.LatLng(21.35269,-157.96962);
+var diamon=new google.maps.LatLng(21.2613,-157.80474);
+var hanau=new google.maps.LatLng(21.26873,-157.69311);
+var polyne=new google.maps.LatLng(21.33638,-157.87388);
+var north=new google.maps.LatLng(21.58444,-158.10722);
+var arizon=new google.maps.LatLng(21.36476,-157.94998);
+var sunset=new google.maps.LatLng(21.667269,-158.04886);
+var kailua=new google.maps.LatLng(21.39666,-157.7543);
+var tripArray = new Array();
+tripArray[0] = pearl;
+tripArray[1] = arizon;
+tripArray[2] = waiki;
+tripArray[3] = diamon;
+tripArray[4] = oahu;
+tripArray[5] = polyne;
+tripArray[6] = north;
+tripArray[7] = sunset;
+tripArray[8] = hanau;
+tripArray[9] = kailua;
+
+var tripName=["Pearl Harbor","USS Arizona","Waikiki beach","Diamond Head","Oahu","Polynesian",
+"North Shore","Sunset Beach","Hanauma Bay","Kailua"];
+      function initialize() {
+        var mapOptions = {
+          center: oahu,
+          zoom: 10,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+            
+        var marker=new google.maps.Marker({position:oahu,});
+        
+		//var myTrip=[stavanger,amsterdam,london];
+		
+		var myTrip1 = [pearl,arizon];
+		alert("Not Numeric0");
+		var myTrip2 = [oahu,arizon,polyne,waiki,diamon,hanau];
+		
+		
+		var myTrip3 = [north,sunset];
+		
+		var mts = [myTrip1,myTrip2]
+		alert("Not Numeric1");
+		for(var i=0;i<2;i++)
+		{
+			var flightPath=new google.maps.Polyline({
+  	path:mts[i],
+  	strokeColor:"#0000FF",
+  	strokeOpacity:0.8,
+  	strokeWeight:2
+  });
+  flightPath.setMap(map);
+  
+  	var fp =new google.maps.Polyline({
+  	path:myTrip3,
+  	strokeColor:"#FF0099",
+  	strokeOpacity:0.8,
+  	strokeWeight:2
+  });
+  fp.setMap(map);
+		}
+   marker.setMap(map);
+   //alert("Not Numeric0");
+/*    var infowindow = new google.maps.InfoWindow({
+  content:"Hello World!"
+  }); */
+	for(var i=0;i<tripArray.length;i++)
+	{
+		var markers = new google.maps.Marker({position:tripArray[i],});
+		markers.setMap(map);
+		
+		var infowindow = new google.maps.InfoWindow({content:tripName[i]+":"+i});
+		infowindow.open(map,markers);
+		//alert("Not Numeric0");
+	}
+/* 	var markers=new google.maps.Marker({position:stavanger,});
+	markers.setMap(map);
+	var markere=new google.maps.Marker({position:london,});
+	markere.setMap(map); */
+	
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+  </body>
+</html>

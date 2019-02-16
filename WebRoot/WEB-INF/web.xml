@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TestReceive</servlet-name>
+    <servlet-class>com.geoImage.web.TestReceive</servlet-class>
+  </servlet>
+<servlet> 
+ <servlet-name>HotAttServlet</servlet-name> 
+ <servlet-class>com.geoImage.web.HotAttServlet</servlet-class> 
+ </servlet> 
+ <servlet> 
+ <servlet-name>RuleAttServlet</servlet-name> 
+ <servlet-class>com.geoImage.web.RuleAttServlet</servlet-class> 
+ </servlet> 
+ <servlet> 
+ <servlet-name>AddAttServlet</servlet-name> 
+ <servlet-class>com.geoImage.web.AddAttServlet</servlet-class> 
+ </servlet>
+ <servlet>  
+ <servlet-name>GetAttServlet</servlet-name> 
+ <servlet-class>com.geoImage.web.GetAttServlet</servlet-class> 
+ </servlet> 
+ <servlet>  
+ <servlet-name>TravelPlanServlet</servlet-name> 
+ <servlet-class>com.geoImage.web.TravelPlanServlet</servlet-class> 
+ </servlet>
+ <servlet>  
+ <servlet-name>RoutePlanServlet</servlet-name> 
+ <servlet-class>com.geoImage.web.RoutePlanServlet</servlet-class> 
+ </servlet>
+
+ 
+  <servlet-mapping> 
+ <servlet-name>RuleAttServlet</servlet-name> 
+ <url-pattern>/servlet/RuleAttServlet</url-pattern> 
+ </servlet-mapping> 
+ <servlet-mapping> 
+ <servlet-name>HotAttServlet</servlet-name> 
+ <url-pattern>/servlet/HotAttServlet</url-pattern> 
+ </servlet-mapping> 
+   <servlet-mapping> 
+ <servlet-name>AddAttServlet</servlet-name> 
+ <url-pattern>/servlet/AddAttServlet</url-pattern> 
+ </servlet-mapping> 
+ <servlet-mapping> 
+ <servlet-name>GetAttServlet</servlet-name> 
+ <url-pattern>/servlet/GetAttServlet</url-pattern> 
+ </servlet-mapping> 
+ <servlet-mapping> 
+ <servlet-name>TravelPlanServlet</servlet-name> 
+ <url-pattern>/servlet/TravelPlanServlet</url-pattern> 
+ </servlet-mapping> 
+  <servlet-mapping> 
+ <servlet-name>RoutePlanServlet</servlet-name> 
+ <url-pattern>/servlet/RoutePlanServlet</url-pattern> 
+ </servlet-mapping> 
+ 
+  <servlet-mapping>
+    <servlet-name>TestReceive</servlet-name>
+    <url-pattern>/map/TestReceive</url-pattern>
+  </servlet-mapping>	
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
